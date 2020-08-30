@@ -23,3 +23,5 @@ jobs:
           uses: hashicorp/setup-terraform@v1.1.0
         - name: Terraform Init
           run: terraform init $SOURCE_DIR
+        - name: Terraform Plan
+          run: terraform Plan $SOURCE_DIR
