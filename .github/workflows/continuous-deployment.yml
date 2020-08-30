@@ -12,6 +12,7 @@ jobs:
             ARM_CLIENT_SECRET: ${{ secrets.ARM_CLIENT_SECRET }}
             ARM_SUBSCRIPTION_ID: ${{ secrets.ARM_SUBSCRIPTION_ID }}
             ARM_TENANT_ID: ${{ secrets.ARM_TENANT_ID }}
+            SOURCE_DIR: $GITHUB_WORKSPACE/src/01-simple-network
         name: 'Terraform'
         runs-on: ubuntu-latest
         steps:
@@ -20,3 +21,5 @@ jobs:
     
         - name: Setup Terraform
           uses: hashicorp/setup-terraform@v1.1.0
+        - name: Terraform Init
+          run: terraform init $SOURCE_DIR
