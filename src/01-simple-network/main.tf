@@ -3,7 +3,7 @@ resource "azurerm_resource_group" "main" {
   location = "West Europe"
 }
 
-# Create a virtual network in the production-resources resource group
+
 resource "azurerm_virtual_network" "main" {
   name                = "vnet-simle"
   resource_group_name = azurerm_resource_group.main.name
